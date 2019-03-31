@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="dfd05d6e-3a2d-4f92-99e6-a3a991bcbe00">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" fontName="Arial" fontSize="26" isBold="true" pdfFontName="Helvetica-Bold"/>
+	<style name="SubTitle" forecolor="#666666" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<queryString>
+		<![CDATA[SELECT
+kode_gedung as kode,
+nama_gedung as nama,
+keterangan as ket
+FROM
+     `gedung` gedung]]>
+	</queryString>
+	<field name="kode" class="java.lang.String"/>
+	<field name="nama" class="java.lang.String"/>
+	<field name="ket" class="java.lang.String"/>
+	<variable name="urut" class="java.lang.Integer" calculation="Count">
+		<variableExpression><![CDATA[$V{urut}.intValue()]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="108" splitType="Stretch">
+			<staticText>
+				<reportElement style="Title" x="129" y="15" width="402" height="33" uuid="ddf309be-024c-4e75-8c46-d6a9b663a0ed"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Serif" size="24"/>
+				</textElement>
+				<text><![CDATA[Daftar Gedung MAN 1 PRAYA]]></text>
+			</staticText>
+			<image>
+				<reportElement x="33" y="15" width="70" height="69" uuid="0a07cce5-1727-47d0-a465-3fd0e365a913"/>
+				<imageExpression><![CDATA["Untitled-1.png"]]></imageExpression>
+			</image>
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="21" y="97" width="510" height="1" uuid="59aa6369-50c7-4ab9-ab44-ff160672a641"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="10" y="95" width="533" height="1" uuid="2a32afbf-40da-413a-b547-3152dab38982"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="129" y="48" width="402" height="27" uuid="d2f31051-f112-4582-9dd7-f0d7b32b0be5"/>
+				<textElement textAlignment="Center">
+					<font fontName="Serif"/>
+				</textElement>
+				<text><![CDATA[Jl. Pejanggik Nomor 05 Tampar-ampar Praya Tengah
+Telp. 0370 654154]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="22" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="21" width="555" height="1" uuid="9d651991-95c5-4acd-ac9f-8731f58efd4b"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement style="Column header" x="163" y="0" width="195" height="21" forecolor="#000000" uuid="2289ca74-5a97-4dbc-946e-8a4d0941741c"/>
+				<textElement>
+					<font fontName="Serif" size="14"/>
+				</textElement>
+				<text><![CDATA[Nama Gedung]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="376" y="0" width="179" height="21" forecolor="#000000" uuid="8ae660d2-da71-48e6-af5e-30abb40b1e24"/>
+				<textElement>
+					<font fontName="Serif" size="14"/>
+				</textElement>
+				<text><![CDATA[Keterangan]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="3" y="0" width="30" height="21" forecolor="#000000" uuid="49ca96e9-4fc4-4b3d-bebb-33bebc254586"/>
+				<textElement>
+					<font fontName="Serif" size="14" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[No]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="42" y="0" width="100" height="21" forecolor="#000000" uuid="2bd22805-dfda-4cfd-bbf3-c07c01f791bd"/>
+				<textElement>
+					<font fontName="Serif" size="14" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[Kode Gedung]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="16" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="15" width="555" height="1" uuid="8f4762bb-11cd-43f2-a652-80dda75b8d16"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement x="3" y="1" width="30" height="15" uuid="8d7c5c5c-f4a6-4b9a-b0ec-d2c785a7784c"/>
+				<textElement>
+					<font fontName="Serif" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{urut}.intValue()+1]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="42" y="1" width="100" height="14" uuid="56f8c922-c0cc-4b30-8116-80207bca9d4f"/>
+				<textElement>
+					<font fontName="Serif" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{kode}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="163" y="0" width="195" height="15" uuid="1e5cfc60-0112-41c3-8f25-4ad49b20c725"/>
+				<textElement>
+					<font fontName="Serif" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nama}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="376" y="0" width="177" height="15" uuid="3d2c12b7-3f8c-448d-b5b5-0e91651765b9"/>
+				<textElement>
+					<font fontName="Serif" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ket}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="11" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1" uuid="574d09cf-5a3a-4beb-bb23-703ee5b0d383"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement style="Column header" x="433" y="0" width="80" height="20" uuid="c166c4fb-ffe9-4bd8-a13e-b562ae144d0e"/>
+				<textElement textAlignment="Right">
+					<font fontName="Serif" size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement style="Column header" x="513" y="0" width="40" height="20" uuid="f99763e9-6d9d-48f9-a479-ffcc882fb730"/>
+				<textElement>
+					<font fontName="Serif" size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy h.mm a">
+				<reportElement style="Column header" x="0" y="0" width="197" height="20" uuid="7674ad5d-6c9d-436b-b612-e7389ac2cced"/>
+				<textElement>
+					<font fontName="Serif" size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
