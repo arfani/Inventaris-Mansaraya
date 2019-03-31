@@ -153,7 +153,7 @@ public class Login extends javax.swing.JFrame {
     private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
         try {
             Desktop desktop = Desktop.getDesktop();
-            URI url = new URI("https://www.facebook.com/arfanindependent");
+            URI url = new URI("https://www.facebook.com/muhammadarfanihidayat");
             if (Desktop.isDesktopSupported()) {
                 try {
                     desktop.browse(url);
